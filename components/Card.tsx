@@ -2,6 +2,7 @@ import { Image } from "expo-image";
 import { StyleSheet, Text, View } from "react-native";
 
 type Props = {
+  id: number;
   sumberGambar: string;
   namaProduk: string;
   deskripsiProduk: string;
@@ -88,6 +89,7 @@ const styles = StyleSheet.create({
 });
 
 export default function Card({
+  id,
   sumberGambar,
   namaProduk,
   deskripsiProduk,
