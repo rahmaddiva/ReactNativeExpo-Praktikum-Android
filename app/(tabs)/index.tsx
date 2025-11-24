@@ -1,7 +1,7 @@
 import Card from "@/components/Card";
 import { FlatList, StyleSheet, View } from "react-native";
 
-const dataCard = require("../assets/dataCard.json");
+const dataCard = require("../../assets/dataCard.json");
 
 export default function Index() {
   return (

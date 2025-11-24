@@ -1,5 +1,6 @@
 import { Image } from "expo-image";
-import { StyleSheet, Text, View } from "react-native";
+import { router } from "expo-router";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 
 type Props = {
   id: number;
@@ -97,12 +98,21 @@ export default function Card({
   const imageSource = imageMap[sumberGambar] || PlaceHolderImage;
 
   return (
-    <View style={styles.panel}>
-      <Image style={styles.image} source={imageSource} />
-      <View style={styles.infoBox}>
-        <Text style={styles.textWhite}>{namaProduk}</Text>
-        <Text style={styles.textKecil}>{deskripsiProduk}</Text>
+    <Pressable
+      onPress={() =>
+        router.push({
+          pathname: "/details/[id]",
+          params: { id: id.toString() },
+        })
+      }
+    >
+      <View style={styles.panel}>
+        <Image style={styles.image} source={imageSource} />
+        <View style={styles.infoBox}>
+          <Text style={styles.textWhite}>{namaProduk}</Text>
+          <Text style={styles.textKecil}>{deskripsiProduk}</Text>
+        </View>
       </View>
-    </View>
+    </Pressable>
   );
 }
